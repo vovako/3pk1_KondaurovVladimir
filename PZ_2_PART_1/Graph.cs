@@ -26,6 +26,21 @@
             return isAdjacentGraph;
         }*/
 
+        public static bool IsAdjacent(int[,] matrix)
+        {
+            bool IsAdjacent = true;
+            int size = matrix.GetLength(0);
+            for (int i = 0; i < size; i++)
+                for (int j = 0; j < size; j++)
+                    if (matrix[i, j] == 0)
+                    {
+                        IsAdjacent = false;
+                        break;
+                    }
+
+            return IsAdjacent;
+        }
+        
         public static int[,] GetAchievability(int[,] graph)
         {
             int size = graph.GetLength(0);

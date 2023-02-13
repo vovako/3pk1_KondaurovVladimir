@@ -2,16 +2,6 @@
 {
     internal class Program
     {
-        static void PrintMatrix(int[,] matrix)
-        {
-            int size = matrix.GetLength(0);
-            for (int r = 0; r < size; r++)
-            {
-                for (int c = 0; c < size; c++)
-                    Console.Write(matrix[r, c] + " ");
-                Console.WriteLine();
-            }
-        }
         static void Main(string[] args)
         {
             int[,] matrix ={{0,1,1,0,0},
@@ -30,17 +20,19 @@
 
             Console.WriteLine();
 
-            bool IsAdjacent = true;
-            for (int i = 0; i < matrixAchievability.GetLength(0); i++)
-                for (int j = 0; j < matrixAchievability.GetLength(0); j++)
-                    if (matrixAchievability[i, j] == 0)
-                    {
-                        IsAdjacent = false;
-                        break;
-                    }
-
-            string msg = IsAdjacent ? "" : "не ";
+            string msg = Graph.IsAdjacent(matrixAchievability) ? "" : "не ";
             Console.WriteLine($"Данный граф {msg}является связным");
+        }
+
+        static void PrintMatrix(int[,] matrix)
+        {
+            int size = matrix.GetLength(0);
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                    Console.Write(matrix[r, c] + " ");
+                Console.WriteLine();
+            }
         }
     }
 }
