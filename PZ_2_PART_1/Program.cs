@@ -31,8 +31,8 @@
             Console.WriteLine();
 
             bool IsAdjacent = true;
-            for (int i = 0; i < matrixAchievability.Length; i++)
-                for (int j = 0; j < matrixAchievability.Length; j++)
+            for (int i = 0; i < matrixAchievability.GetLength(0); i++)
+                for (int j = 0; j < matrixAchievability.GetLength(0); j++)
                     if (matrixAchievability[i, j] == 0)
                     {
                         IsAdjacent = false;
